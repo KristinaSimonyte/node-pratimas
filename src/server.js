@@ -1,7 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
-const productRoute = require('./routes/productRoute');
+const productsRoute = require('./routes/productsRoute');
 
 const PORT = process.env.SERVER_PORT || 3000;
 
@@ -13,6 +13,6 @@ app.use(cors());
 app.use(express.json());
 
 //routes
-app.use('./', productRoute);
+app.use('/', productsRoute);
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));

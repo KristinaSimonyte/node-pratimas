@@ -1,10 +1,10 @@
-function successResponce(res, data, status = 200) {
+function successResponse(res, data, status = 200) {
     res.status(status).json({
         success: true,
         data,
     });
 }
-function failResponce(res, err = 'Something went wrong', status = 500) {
+function failResponse(res, err = 'Something went wrong', status = 500) {
     res.status(status).json({
         success: false, 
         error: [err],
@@ -12,6 +12,6 @@ function failResponce(res, err = 'Something went wrong', status = 500) {
 }
 
 module.exports = {
-    successResponce,
-    failResponce,
+    successResponse,
+    failResponse,
 };
