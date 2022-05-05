@@ -1,0 +1,19 @@
+GET http://localhost:3000/products
+
+###
+
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+    "id": 1,
+    "image_url": "https://cdn.barbora.lt/products/6dc50b1e-4336-415c-9fce-f4d72a15bf86_m.png",
+    "title": "Pienas, 2,5% rieb. "DVARO", pak. 1L, 1 l",
+    "description": "DVARO pienas yra šviežio skonio, kurį lemia natūralūs baltymai, išsaugoti naudojant unikalią gamybos technologiją. Apdorotas automatinėje pieno mikrofiltravimo ir pasterizavimo linijoje. Pasterizuotas žemoje temperatūroje, todėl piene išlieka nepakitę vertingi pieno baltymai.,
+    "price": 1.29
+
+}
+
+###
+GET http://localhost:3000/totalproducts
+###
