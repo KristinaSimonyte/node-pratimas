@@ -1,5 +1,5 @@
 const { successResponse, failResponse } = require('../helpers/dbHelper');
-const { getProductsFromDb, insertProduct, removeProductFromDb } = require('../models/productsModel');
+const { getProductsFromDb, insertProduct, removeProductFromDb, countProductsFromDb } = require('../models/productsModel');
 
 async function getProducts(req, res) {
   const products = await getProductsFromDb();
@@ -25,8 +25,16 @@ async function deleteProduct(req, res) {
     : successResponse(res, 'product deleted');
 }
 
+async function totalProducts (req, res) {
+const countResult = await countProductsFromDb();
+return countResult === false
+? failResponse(res)
+: successResponse(res, countResult);
+}
+
 module.exports = {
   getProducts,
   createProduct,
   deleteProduct,
+  totalProducts,
 };
